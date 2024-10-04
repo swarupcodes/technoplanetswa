@@ -1,0 +1,168 @@
+body {
+  background-color: #f4f4f4;
+  font-family: "Arial", sans-serif;
+}
+
+/* Gallery styles */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Images */
+.gallery-item img {
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Make images responsive */
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 100%;
+  }
+}
+
+/* Scroll Animation */
+.gallery-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.gallery-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container for overlay */
+.overlay-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Images */
+.overlay-container img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Overlay styles */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* Overlay text */
+.overlay-text {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.overlay-text h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 1rem;
+}
+
+/* Hover effects */
+.overlay-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-container:hover img {
+  transform: scale(1.1);
+}
+
+/* Container for image and hover box */
+.hover-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Image styles */
+.hover-container img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Container for image and hover box */
+.hover-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Image styles */
+.hover-container img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* The hover pop-up box */
+.hover-box {
+  position: absolute;
+  bottom: 10px; /* Adjust position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px; /* Fixed width for the pop-up box */
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* The title inside the hover box */
+.hover-box h5 {
+  margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+/* The description text */
+.hover-box p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Hover effects */
+.hover-container:hover img {
+  transform: scale(1.05); /* Slight image zoom on hover */
+}
+
+/* Show the hover-box when hovering over the image */
+.hover-container:hover .hover-box {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* Enables the hover box */
+}
